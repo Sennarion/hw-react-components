@@ -1,19 +1,28 @@
 import PropTypes from 'prop-types';
+import { randomHsl } from 'utils/getRandomColor';
+import {
+  Section,
+  Title,
+  List,
+  ListItem,
+  Label,
+  Persentage,
+} from './Statistics.styled';
 
 function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      {title && <h2 className="title">Upload stats</h2>}
+    <Section>
+      {title && <Title>Upload stats</Title>}
 
-      <ul className="stat-list">
+      <List>
         {stats.map(el => (
-          <li className="item" key={el.id}>
-            <span className="label">{el.label}</span>
-            <span className="percentage">{el.percentage}</span>
-          </li>
+          <ListItem key={el.id} bgColor={randomHsl()}>
+            <Label>{el.label}</Label>
+            <Persentage>{el.percentage}%</Persentage>
+          </ListItem>
         ))}
-      </ul>
-    </section>
+      </List>
+    </Section>
   );
 }
 
