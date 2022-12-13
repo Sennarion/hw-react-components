@@ -1,3 +1,3 @@
 export function randomHsl() {
-    return 'hsla(' + (Math.random() * 360) + ', 100%, 30%, 1)';
+  return 'hsla(' + Math.random() * 360 + ', 100%, 40%, 0.7)';
 }
